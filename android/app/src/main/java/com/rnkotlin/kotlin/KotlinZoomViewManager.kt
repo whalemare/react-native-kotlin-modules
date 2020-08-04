@@ -15,10 +15,9 @@ import com.facebook.react.uimanager.events.RCTEventEmitter
 
 
 /**
- * @author Anton Vlasov - whalemare
- * @since 2020
+ * It is works only when debugger attached
  */
-open class ZoomViewManager @JvmOverloads constructor() : SimpleViewManager<SubsamplingScaleImageView>() {
+open class KotlinZoomViewManager @JvmOverloads constructor() : SimpleViewManager<SubsamplingScaleImageView>() {
     override fun createViewInstance(reactContext: ThemedReactContext): SubsamplingScaleImageView {
         val view = SubsamplingScaleImageView(reactContext)
 
@@ -34,7 +33,7 @@ open class ZoomViewManager @JvmOverloads constructor() : SimpleViewManager<Subsa
     }
 
     override fun getName(): String {
-        return "ZoomView"
+        return "KotlinZoomView"
     }
 
     override fun getExportedCustomDirectEventTypeConstants(): Map<String, Any>? {

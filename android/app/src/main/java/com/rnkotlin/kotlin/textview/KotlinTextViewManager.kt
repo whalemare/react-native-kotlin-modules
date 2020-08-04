@@ -1,4 +1,4 @@
-package com.rnkotlin.kotlin
+package com.rnkotlin.kotlin.textview
 
 import android.widget.TextView
 import com.facebook.react.uimanager.SimpleViewManager
@@ -7,8 +7,7 @@ import com.facebook.react.uimanager.annotations.ReactProp
 
 
 /**
- * @author Anton Vlasov - whalemare
- * @since 2020
+ * It is works correctly
  */
 open class KotlinTextViewManager : SimpleViewManager<TextView>() {
     override fun createViewInstance(reactContext: ThemedReactContext): TextView {

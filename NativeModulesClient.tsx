@@ -1,10 +1,12 @@
-import React, {useMemo} from 'react';
+import {KotlinZoomViewClient} from './KotlinZoomViewClient';
+import React, {useState} from 'react';
 import {
-  StyleProp,
-  ViewStyle,
-  View,
+  Button,
   requireNativeComponent,
+  StyleProp,
   Text,
+  View,
+  ViewStyle,
 } from 'react-native';
 
 interface NativeModulesClientProps {
@@ -13,24 +15,21 @@ interface NativeModulesClientProps {
 
 type NativeTextViewProps = {
   text: string;
+  style?: StyleProp<ViewStyle>;
 };
 
 const KotlinTextView = requireNativeComponent<NativeTextViewProps>(
   'KotlinTextView',
 );
-const KotlinZoomView = requireNativeComponent<{image: string}>('ZoomView');
+
+// const JavaZoomView = requireNativeComponent<ZoomViewProps>('JavaZoomView');
 
 export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
   props,
 ) => {
   const {style} = props;
 
-  // const JavaTextView = useMemo(() => {
-  //   return requireNativeComponent<NativeTextViewProps>('JavaTextView');
-  // }, []);
-  // const KotlinTextView = useMemo(() => {
-  //   return requireNativeComponent<NativeTextViewProps>('KotlinTextView');
-  // }, []);
+  const [isVisible, setVisible] = useState(false);
 
   return (
     <View style={style}>
@@ -48,16 +47,30 @@ export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
       />
 
       <Text>
-        Step 3: Press for open KotlinZoomView that uses third-party android
-        dependency
+        Step 3: Look at JavaZoomView that uses third-party android dependency
+        and sure, that it renders correctly
       </Text>
-      <KotlinZoomView
+      {/* <JavaZoomView
         style={{
           width: 300,
           height: 300,
         }}
         image={'rn.jpeg'} // link from assets directory
+      /> */}
+
+      <Text>
+        Step 4: Without debugger, press for show KotlinZoomView and sure that it
+        crashed at runtime
+      </Text>
+      <Text>
+        Step 5: Attach debugger via dev menu, press for show KotlinZoomView and
+        sure that it render correctly
+      </Text>
+      <Button
+        title={isVisible ? 'Hide KotlinZoomView' : 'Show KotlinZoomView'}
+        onPress={() => setVisible(!isVisible)}
       />
+      {isVisible && <KotlinZoomViewClient />}
     </View>
   );
 };

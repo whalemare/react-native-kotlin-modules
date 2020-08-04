@@ -9,8 +9,8 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.rnkotlin.kotlin.KotlinPackage;
-import com.rnkotlin.kotlin.ZoomViewPackage;
+import com.rnkotlin.kotlin.KotlinZoomViewPackage;
+import com.rnkotlin.kotlin.textview.KotlinTextViewPackage;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -30,8 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new KotlinPackage());
-          packages.add(new ZoomViewPackage());
+          packages.add(new KotlinTextViewPackage()); // always works correctly
+//          packages.add(new JavaZoomViewPackage()); // always works correctly
+          packages.add(new KotlinZoomViewPackage()); // works only when debugger attached
           return packages;
         }
 

@@ -1,17 +1,14 @@
-package com.rnkotlin.kotlin
+package com.rnkotlin.kotlin.textview
 
-import android.view.View
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ReactShadowNode
-import com.facebook.react.uimanager.ViewManager
+import com.rnkotlin.kotlin.textview.KotlinTextViewManager
 
 /**
- * @since 2020
- * @author Anton Vlasov - whalemare
+ * It is works correctly
  */
-class KotlinPackage : ReactPackage {
+class KotlinTextViewPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
         return emptyList()
     }
