@@ -9,6 +9,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.rnkotlin.java.JavaZoomViewPackage;
 import com.rnkotlin.kotlin.KotlinZoomViewPackage;
 import com.rnkotlin.kotlin.textview.KotlinTextViewPackage;
 
@@ -30,8 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new KotlinTextViewPackage());
-//          packages.add(new JavaZoomViewPackage()); // uncomment this line, and KotlinZoomView start works nice
+          packages.add(new KotlinTextViewPackage()); // always works
+          packages.add(new JavaZoomViewPackage()); // uncomment this line, and KotlinZoomView start works nice
           packages.add(new KotlinZoomViewPackage());
           return packages;
         }

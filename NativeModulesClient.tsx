@@ -22,7 +22,7 @@ const KotlinTextView = requireNativeComponent<NativeTextViewProps>(
   'KotlinTextView',
 );
 
-// const JavaZoomView = requireNativeComponent<ZoomViewProps>('JavaZoomView');
+const JavaZoomView = requireNativeComponent('JavaZoomView');
 
 export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
   props,
@@ -65,13 +65,13 @@ export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
         if add JavaZoomViewPackage to packages in MainApplication. Checkout to
         branch `feature/java` to check it
       </Text>
-      {/* <JavaZoomView
+      <JavaZoomView
         style={{
           width: 300,
           height: 300,
         }}
         image={'rn.jpeg'} // link from assets directory
-      /> */}
+      />
     </View>
   );
 };
