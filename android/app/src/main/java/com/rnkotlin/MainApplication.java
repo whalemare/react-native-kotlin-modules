@@ -30,9 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new KotlinTextViewPackage()); // always works correctly
-//          packages.add(new JavaZoomViewPackage()); // always works correctly
-          packages.add(new KotlinZoomViewPackage()); // works only when debugger attached
+          packages.add(new KotlinTextViewPackage());
+//          packages.add(new JavaZoomViewPackage()); // uncomment this line, and KotlinZoomView start works nice
+          packages.add(new KotlinZoomViewPackage());
           return packages;
         }
 

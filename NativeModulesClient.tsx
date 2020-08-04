@@ -47,18 +47,6 @@ export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
       />
 
       <Text>
-        Step 3: Look at JavaZoomView that uses third-party android dependency
-        and sure, that it renders correctly
-      </Text>
-      {/* <JavaZoomView
-        style={{
-          width: 300,
-          height: 300,
-        }}
-        image={'rn.jpeg'} // link from assets directory
-      /> */}
-
-      <Text>
         Step 4: Without debugger, press for show KotlinZoomView and sure that it
         crashed at runtime
       </Text>
@@ -71,6 +59,19 @@ export const NativeModulesClient: React.FC<NativeModulesClientProps> = (
         onPress={() => setVisible(!isVisible)}
       />
       {isVisible && <KotlinZoomViewClient />}
+
+      <Text>
+        Step 6: For some reasons, KotlinZoomView start works without debugger,
+        if add JavaZoomViewPackage to packages in MainApplication. Checkout to
+        branch `feature/java` to check it
+      </Text>
+      {/* <JavaZoomView
+        style={{
+          width: 300,
+          height: 300,
+        }}
+        image={'rn.jpeg'} // link from assets directory
+      /> */}
     </View>
   );
 };
